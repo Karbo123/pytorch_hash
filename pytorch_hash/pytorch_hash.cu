@@ -32,7 +32,7 @@ torch::Tensor hash(torch::Tensor data) {
     auto is_cuda = data.is_cuda();
     auto options = torch::TensorOptions().dtype(torch::kInt64);
     torch::Tensor out = data.new_empty({num}, options);
-    AT_DISPATCH_ALL_TYPES_AND_HALF(data.type(), "hash", [&] {
+    AT_DISPATCH_ALL_TYPES_AND(at::ScalarType::Half, data.type(), "hash", [&] {
         auto functor = hash_functor<scalar_t>(data.data_ptr<scalar_t>(), 
                                               out .data_ptr<int64_t>(),
                                               num, dim);
