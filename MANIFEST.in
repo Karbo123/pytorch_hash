@@ -1,0 +1,2 @@
+include pytorch_hash/pytorch_hash.cu
+include README.md
