@@ -20,3 +20,6 @@ x_hashed = pytorch_hash(x) # maybe positive or negative numbers
 ```bash
 CUDA_VISIBLE_DEVICES=0 PYTHONDONTWRITEBYTECODE=1 pytest -s test.py -p no:warnings -p no:cacheprovider
 ```
+
+**Related Problem:**
+- [time delay of print](https://discuss.pytorch.org/t/a-simple-print-function-could-hugely-can-reduce-the-significant-time-delay/153344/7?u=jiabao)
