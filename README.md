@@ -16,6 +16,13 @@ x = torch.randn([1234, 64], dtype=torch.float32, device="cuda")
 x_hashed = pytorch_hash(x) # maybe positive or negative numbers
 ```
 
+you can also compile it using cmake like this:
+```bash
+mkdir build && cd build
+cmake .. -DCMAKE_PREFIX_PATH=$CONDA_PREFIX/lib/python3.8/site-packages/torch/share/cmake/Torch
+make
+```
+
 **Testing:**
 ```bash
 CUDA_VISIBLE_DEVICES=0 PYTHONDONTWRITEBYTECODE=1 pytest -s test.py -p no:warnings -p no:cacheprovider
